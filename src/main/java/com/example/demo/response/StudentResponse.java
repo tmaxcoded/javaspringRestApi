@@ -1,5 +1,6 @@
 package com.example.demo.response;
 
+import com.example.entity.Student;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,16 +14,25 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class StrudentResponse {
+public class StudentResponse {
 
 	
+	public StudentResponse(Student resturnedStudent) {
+		// TODO Auto-generated constructor stub
+		firstName = resturnedStudent.getFirstName();
+		lastName = resturnedStudent.getLastName();
+		email = resturnedStudent.getEmail();
+	}
+
 	@JsonIgnore
 	private long id;
 	
-	@JsonProperty("first_Name")
+	
 	private String firstName;
 	
 	private String lastName;
+	
+	private String email;
 
    
 	
